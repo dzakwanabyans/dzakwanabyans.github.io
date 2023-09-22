@@ -1,175 +1,138 @@
-/* css reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Teko&family=Caveat&family=Russo+One&family=Slabo+27px&display=swap');
 
-
-
-
-
-/* STYLE */
-*{
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-family: 'Passion One', cursive;
 }
 
-body{
-    background-color: #222;
+:root {
+    --bg-color: #112d3f;
+    --second-bg-color: #7aeaee;
+    --text-color: #F9F7F3;
+    --second-text-color: #29e6ff;
+    --accent-color: #ee5136;
 }
 
-.container{
-    background: linear-gradient(225deg, #2EC4B6, #FF9F1C);
-    width: 90%;
-    max-width: 470px;
-    margin: 100px auto 0;
-    padding: 40px 35px;
-    border-radius: 25px;
-    text-align: center;
+html {
+    overflow-x: hidden;
 }
 
-.search{
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 7%;
 }
 
-.search input{
-    border: 0;
-    outline: 0;
-    background: #fff;
-    color: #000;
-    padding: 10px 25px;
-    height: 60px;
-    border-radius: 30px;
-    flex: 1;
-    margin-right: 15px;
-    font-size: 20px;
+.logo {
+    display: flex;
+    align-items: center;
+    user-select: none;
 }
 
-.search button{
-    border: 0;
-    outline: 0;
-    background: #fff;
-    border-radius: 50px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-}
-
-.search button img{
-    width: 25px;
-}
-
-
-.weather h1{
-    font-size: 80px;
-    color: #fff;
-    font-family: 'Lilita One', cursive;
-}
-
-.weather h2{
-    margin-top: 10px;
-    font-size: 30px;
-    color: #fff;
-    font-family: 'Orbitron', sans-serif;
-}
-
-.details{
-    margin-top: 40px;
-    display: grid;
-    grid-template-areas: 'bag1 bag2';
-    place-items: center;
-}
-
-.details .bag1{
-    grid-area: bag1;
-}
-
-.details .bag2{
-    grid-area: bag2;
-}
-
-.details .col{
-    display: grid;
-    grid-template-areas: 
-    'pic data'
-    'pic tess';
-    place-items: center flex-start;
-}
-
-.col{
-    color: #fff;
-    font-weight: 700;
-}
-
-.col img{
-    margin-right: 10px;
+.logo img {
     width: 40px;
-    grid-area: pic;
-    left: 0;
-    top: 0;
+    border-radius: 50%;
+    user-select: none;
+    border: var(--text-color) 2px solid;
 }
 
-.col .humidity,
-.col .wind{
-    grid-area: data;
-    font-size: 25px;
+.logo p {
+    font-size: 2.5rem;
+    margin-left: 0.5rem;
+    font-family: 'Teko', sans-serif;
 }
 
-.col .text{
-    grid-area: tess;
-}
-
-.weather{
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
     display: none;
 }
 
-.error{
-    text-align: center;
-    margin-top: 30px;
-    color: white;
-    font-family: 'Lilita One', cursive;
-    font-size: 24px;
-    display: none;
+.menu {
+    display: flex;
+}
 
+.menu a {
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.menu a:hover {
+    color: var(--second-text-color);
+}
+
+.menu .active {
+    color: var(--second-text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 6.6rem 7% 2rem;
+}
+
+.home {
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+}
+
+.home-img {
+    width: 22rem;
+    margin: 8rem 0 0;
+    border: var(--second-text-color) 5px solid;
+    border-radius: 35%;
+    user-select: none;
+    --web
+}
+
+.home-content {
+    max-width: 60rem;
+    margin: auto;
+    padding: 3rem;
+}
+
+.home-content h1,
+.home-content h1 span {
+    font-family: 'Caveat', cursive;
+    font-size: 4rem;
+}
+
+.home-content .text-animation {
+    position: relative;
+}
+
+.home-content .text-animation h3 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-size: 2rem;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--second-text-color);
+    margin-bottom: 2rem;
+}
+
+.home-content .text-animation p {
+    font-family: 'Slabo 27px', serif;
+    text-align: justify;
+}
+
+.home-content .btn-box{
+    display: inline-block;
 }

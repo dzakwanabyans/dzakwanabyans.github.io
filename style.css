@@ -8,7 +8,7 @@
     border: none;
     text-decoration: none;
     font-family: 'Passion One', cursive;
-    
+
 }
 
 :root {
@@ -36,9 +36,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 7%;
+    padding: 1rem 7%;
     z-index: 100;
+    /* transition: .3s; */
 }
+
+/* header.sticky {
+    background: var(--bg-color);
+} */
 
 .logo {
     display: flex;
@@ -109,12 +114,13 @@ section {
 
 .home-img {
     grid-area: pics;
-    width: 22rem;
-    margin: 8rem 0 0;
+    width: 19rem;
+    margin: 0 0;
     border: var(--second-text-color) 5px solid;
     border-radius: 35%;
     user-select: none;
     transition: 3s;
+    align-self: center;
 }
 
 .home-img:hover {
@@ -122,16 +128,18 @@ section {
 }
 
 .home-content {
-    align-self: self-end;
+    align-self: flex-end;
     grid-area: text;
     max-width: 60rem;
-    padding: 3rem 3rem 2rem 3rem;
+    padding-left: 3rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
 }
 
 .home-content h1,
 .home-content h1 span {
     font-family: 'Caveat', cursive;
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--text-color);
 }
 
@@ -141,9 +149,8 @@ section {
 
 .home-content .text-animation h3 {
     font-family: 'Russo One', sans-serif;
-    font-size: 1.5rem;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: transparent;
     -webkit-text-stroke: .7px var(--second-text-color);
     margin-bottom: 2rem;
@@ -184,7 +191,7 @@ section {
     overflow: hidden;
 }
 
-.home .btn-box .btn{
+.home .btn-box .btn {
     margin-left: 3rem;
 }
 
@@ -232,7 +239,7 @@ span {
 .heading {
     font-size: 3rem;
     letter-spacing: 3px;
-    margin: -1rem 0 0;
+    margin: -2rem 0 0;
     text-align: center;
 }
 
@@ -306,7 +313,7 @@ span {
 /* contact section */
 .contact {
     min-height: auto;
-    padding-top: calc((calc(3rem + 40px)) + 3rem);
+    padding-top: calc((calc(3rem + 40px)) + 5rem);
     align-items: center;
 }
 
@@ -318,7 +325,7 @@ span {
     text-align: center;
 }
 
-.contact form .input-box{
+.contact form .input-box {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -326,14 +333,14 @@ span {
     margin-top: .8rem;
 }
 
-.contact form .input-box .input-field{
+.contact form .input-box .input-field {
     position: relative;
     width: 49%;
     margin: .7rem 0;
 }
 
 .contact form .input-box .input-field input,
-.contact form .textarea-field textarea{
+.contact form .textarea-field textarea {
     font-family: 'Slabo 27px', serif;
     width: 100%;
     height: 100%;
@@ -346,16 +353,123 @@ span {
 }
 
 .contact form .input-box .input-field input::placeholder,
-.contact form .textarea-field textarea::placeholder{
+.contact form .textarea-field textarea::placeholder {
     color: var(--text-color);
 }
 
-.contact form .textarea-field{
+.contact form .textarea-field {
     position: relative;
     margin: .8rem 0 1.7rem;
     display: flex;
 }
 
-.contact form .textarea-field textarea{
+.contact form .textarea-field textarea {
     resize: none;
 }
+
+
+
+/* RESPONSIVE */
+
+/* medium device/tablet */
+@media (max-width : 991px) {
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        margin: 0 auto;
+    }
+
+    .home-img {
+        width: 15rem;
+    }
+
+    .home {
+        grid-template-areas:
+            "pics text"
+            "pics btm";
+    }
+
+    .home-content h1,
+    .home-content h1 span {
+        font-size: 2.2rem;
+    }
+
+    .home-content .text-animation h3 {
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: var(--second-text-color);
+    }
+
+    .home-content .text-animation p {
+        font-size: 1rem;
+    }
+
+    .btn-box {
+        width: 7rem;
+        height: 1.8rem;
+    }
+
+    .btn-box .btn {
+        font-size: 1rem;
+    }
+
+    .about{
+        display: grid;
+        grid-template-areas: 
+        "content pics"
+        "content heading"
+        "btn btn";
+        gap: 1.5rem;
+    }
+
+    .heading {
+        text-align: center;
+        grid-area: heading;
+        font-size: 1.7rem;
+        font-weight: 500;
+        /* border: #29e6ff 2px solid; */
+        border-radius: 20rem;
+    }
+
+    .about-img {
+        grid-area: pics;
+        width: 17rem;
+        align-self: flex-end;
+    }
+
+    .about-content{
+        grid-area: content;
+        padding-top: 30px;
+    }
+
+    .about .about-content p{
+        font-size: 1.2rem;
+    }
+
+
+    .about .about-content h3 {
+        text-align: start;
+        font-size: 1.7rem;
+    }
+
+    .btn-box.btns{
+        align-self: flex-start;
+        justify-self: center;
+        grid-area: btn;
+    }
+
+    /* small device/lanscape phone */
+    @media (max-width : 767px) {
+        body {
+            color: red;
+        }
+    }
+
+    /* extrasmall device/potrait phone*/
+    @media (max-width : 575px) {
+        body {
+            color: yellow;
+        }
+    }

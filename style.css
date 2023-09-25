@@ -110,8 +110,6 @@ section {
     grid-template-columns: .8fr 2fr;
     gap: 0 2rem;
     background: var(--bg-color);
-
-    display: none;
 }
 
 .home-img {
@@ -626,4 +624,14 @@ span {
         display: block;
         margin: 0 auto;
     }
+}
+
+
+.about,
+.contact{
+    display: none;
+}
+
+.show{
+    display: block !important;
 }

@@ -65,7 +65,7 @@ header {
 }
 
 #menu-icon {
-    font-size: 3.6rem;
+    font-size: 2rem;
     color: var(--text-color);
     cursor: pointer;
     display: none;
@@ -107,7 +107,7 @@ section {
     grid-template-areas:
         "pics text"
         "pics text"
-        "pics btm";
+        "pics btn";
     gap: 0 2rem;
     background: var(--bg-color);
 }
@@ -167,7 +167,7 @@ section {
 /* button style */
 .btn-box {
     position: relative;
-    grid-area: btm;
+    grid-area: btn;
     margin: 0 0rem;
     width: 10rem;
     height: 3rem;
@@ -388,7 +388,7 @@ span {
     .home {
         grid-template-areas:
             "pics text"
-            "pics btm";
+            "pics btn";
     }
 
     .home-content h1,
@@ -469,7 +469,72 @@ span {
 
     /* extrasmall device/potrait phone*/
     @media (max-width : 575px) {
-        body {
-            color: yellow;
+        body{
+            color: var(--text-color);
         }
+        .logo {
+            display: flex;
+        }
+
+        .menu{
+            display: none;
+        }
+
+        #menu-icon  {
+            display: flex;
+        }
+        .logo img {
+            width: 25px;
+        }
+        
+        .logo p {
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+            font-family: 'Teko', sans-serif;
+        }
+
+        .home{
+            margin-top: calc(2rem + 25px);
+            grid-template-areas:             
+            "pics"
+            "btn"
+            "text";
+            justify-items: center;
+            grid-template-rows: 1.5fr .3fr 2fr;
+        }
+
+        .home-img{
+            width: 10rem;
+            align-self: flex-end;
+        }
+
+        .home .btn-box{
+            align-self: center;
+        }
+        .home .btn-box .btn {
+            margin-left: 0;
+        }
+
+        .home-content{
+            align-self: flex-start;
+            padding: 0 1rem;
+        }
+        .home-content h1,
+        .home-content h1 span {
+            text-align: center;
+            font-size: 1.9rem;
+        }
+    
+        .home-content .text-animation h3 {
+            font-size: 1rem;
+            font-weight: 300;
+            text-align: center;
+            color: var(--second-text-color);
+        }
+    
+        .home-content .text-animation p {
+            font-size: 1rem;
+            text-align: center;
+        }
+        
     }

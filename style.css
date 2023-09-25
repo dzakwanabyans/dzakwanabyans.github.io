@@ -106,10 +106,12 @@ section {
     display: grid;
     grid-template-areas:
         "pics text"
-        "pics text"
         "pics btn";
+    grid-template-columns: .8fr 2fr;
     gap: 0 2rem;
     background: var(--bg-color);
+
+    display: none;
 }
 
 .home-img {
@@ -234,6 +236,7 @@ span {
     height: 100vh;
     gap: .1rem;
     background: #0f4c5c;
+    display: none;
 }
 
 .heading {
@@ -415,13 +418,16 @@ span {
         font-size: 1rem;
     }
 
-    .about{
+    .about {
         display: grid;
-        grid-template-areas: 
-        "content pics"
-        "content heading"
-        "btn btn";
-        gap: 1.5rem;
+        grid-template-areas:
+            "content pics"
+            "content heading"
+            "btn btn";
+        /* gap: 1.5rem; */
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1.5fr .1fr .5fr;
+        display: none;
     }
 
     .heading {
@@ -431,6 +437,7 @@ span {
         font-weight: 500;
         /* border: #29e6ff 2px solid; */
         border-radius: 20rem;
+        align-self: flex-end;
     }
 
     .about-img {
@@ -439,12 +446,14 @@ span {
         align-self: flex-end;
     }
 
-    .about-content{
+    .about-content {
         grid-area: content;
-        padding-top: 30px;
+        align-self: flex-end;
+        padding-right: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 
-    .about .about-content p{
+    .about .about-content p {
         font-size: 1.2rem;
     }
 
@@ -454,87 +463,167 @@ span {
         font-size: 1.7rem;
     }
 
-    .btn-box.btns{
+    .btn-box.btns {
         align-self: flex-start;
         justify-self: center;
         grid-area: btn;
     }
+}
 
-    /* small device/lanscape phone */
-    @media (max-width : 767px) {
-        body {
-            color: red;
-        }
+/* small device/lanscape phone */
+/* @media (max-width : 767px) {
+    body {
+        color: red;
+    }
+} */
+
+/* extrasmall device/potrait phone*/
+@media (max-width : 575px) {
+    body {
+        color: var(--text-color);
     }
 
-    /* extrasmall device/potrait phone*/
-    @media (max-width : 575px) {
-        body{
-            color: var(--text-color);
-        }
-        .logo {
-            display: flex;
-        }
+    .logo {
+        display: flex;
+    }
 
-        .menu{
-            display: none;
-        }
+    .menu {
+        display: none;
+    }
 
-        #menu-icon  {
-            display: flex;
-        }
-        .logo img {
-            width: 25px;
-        }
-        
-        .logo p {
-            font-size: 1.5rem;
-            margin-left: 0.5rem;
-            font-family: 'Teko', sans-serif;
-        }
+    #menu-icon {
+        display: flex;
+    }
 
-        .home{
-            margin-top: calc(2rem + 25px);
-            grid-template-areas:             
+    .logo img {
+        width: 25px;
+    }
+
+    .logo p {
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
+        font-family: 'Teko', sans-serif;
+    }
+
+    .home {
+        margin-top: calc(2rem + 25px);
+        grid-template-areas:
+            "text"
+            "btn";
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        grid-template-rows: 1fr .5fr;
+    }
+
+    .home-img {
+        display: none;
+    }
+
+    .home .btn-box {
+        align-self: flex-start;
+    }
+
+    .home .btn-box .btn {
+        margin-left: 0;
+    }
+
+    .home-content {
+        align-self: flex-end;
+        padding: 0 1rem;
+    }
+
+    .home-content h1,
+    .home-content h1 span {
+        font-size: 13vw;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .home-content .text-animation h3 {
+        font-size: 7.5vw;
+        font-weight: 600;
+        text-align: center;
+        color: transparent;
+        border: var(--accent-color) 2px solid;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .home-content .text-animation h3:hover {
+        color: var(--accent-color);
+        -webkit-text-stroke: .7px var(--accent-color);
+
+    }
+
+    .home-content .text-animation p {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+
+
+
+    .about {
+        grid-template-areas:
+            "heading"
             "pics"
-            "btn"
-            "text";
-            justify-items: center;
-            grid-template-rows: 1.5fr .3fr 2fr;
-        }
-
-        .home-img{
-            width: 10rem;
-            align-self: flex-end;
-        }
-
-        .home .btn-box{
-            align-self: center;
-        }
-        .home .btn-box .btn {
-            margin-left: 0;
-        }
-
-        .home-content{
-            align-self: flex-start;
-            padding: 0 1rem;
-        }
-        .home-content h1,
-        .home-content h1 span {
-            text-align: center;
-            font-size: 1.9rem;
-        }
-    
-        .home-content .text-animation h3 {
-            font-size: 1rem;
-            font-weight: 300;
-            text-align: center;
-            color: var(--second-text-color);
-        }
-    
-        .home-content .text-animation p {
-            font-size: 1rem;
-            text-align: center;
-        }
-        
+            "content"
+            "btn";
+        grid-template-columns: 1fr;
+        grid-template-rows: 0fr 1fr 2fr .3fr;
     }
+
+    .heading {
+        grid-area: heading;
+        display: none;
+    }
+
+    .about-img {
+        width: 70vw;
+        height: 70vw;
+        margin: auto;
+    }
+
+    .about .about-content {
+        padding: 0;
+        padding-top: 1rem;
+        align-self: flex-start;
+    }
+
+    .about .about-content p {
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+    }
+
+
+    .about .about-content h3 {
+        text-align: center;
+        font-size: 1.7rem;
+    }
+
+    .btn-box.btns {
+        margin: 0;
+    }
+
+    .contact{
+        padding-top: calc((calc(25px + 2rem)) + 2rem);
+    }
+
+    .contact form .input-box .input-field{
+        width: 100%;
+    }
+
+    .contact form .input-box {
+        margin: 0;
+    }
+
+    .contact .heading{
+        display: block;
+        margin: 0 auto;
+    }
+}

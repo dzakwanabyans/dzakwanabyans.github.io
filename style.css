@@ -234,7 +234,6 @@ span {
     height: 100vh;
     gap: .1rem;
     background: #0f4c5c;
-    display: none;
 }
 
 .heading {
@@ -627,11 +626,10 @@ span {
 }
 
 
-.about,
-.contact{
+.noShow{
     display: none;
-}
+}   
 
-.show{
-    display: block !important;
+.display.show{
+    display: '';
 }

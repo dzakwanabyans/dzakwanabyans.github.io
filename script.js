@@ -6,6 +6,8 @@ const home = document.querySelector(".home");
 const about = document.querySelector(".about");
 const contact = document.querySelector(".contact");
 const findme = document.querySelector(".findme");
+const logo = document.querySelector(".logo");
+
 
 function show(pr) {
     pr.style.display = '';
@@ -56,7 +58,7 @@ menu.addEventListener("click", function () {
 
 
     portofolioClick.addEventListener("click", function () {
-        [portofolioClick.innerHTML = "Soon"]
+        portofolioClick.innerHTML = "Soon";
     })
 })
 
@@ -67,26 +69,49 @@ if (window.innerWidth < 576) {
 
 
 let icon = document.querySelector("#menu-icon");
-    icon.addEventListener("click", function () {
-        if(menu.style.display === 'none'){
-            show(menu);
-        }
-        else{
-            noShow(menu);
-        }
+icon.addEventListener("click", function () {
+    if (menu.style.display === 'none') {
+        icon.style.margin = "0 0 0 auto";
+        show(menu);
+        noShow(logo);
+    }
+    else {
+        icon.style.margin = "";
+        noShow(menu);
+        show(logo);
+    }
+    icon.classList.toggle("bx-menu");
+    icon.classList.toggle("bx-x-circle");
+})
+
+home.addEventListener("click", function () {
+    if (menu.style.display === '') {
+        icon.style.margin = "";
+        noShow(menu);
+        show(logo);
         icon.classList.toggle("bx-menu");
         icon.classList.toggle("bx-x-circle");
-    })
+    }
+})
 
 
 const me = document.querySelector(".me");
-me.addEventListener("click", function(){
-    show(findme);
-    noShow(home);
+me.addEventListener("click", function () {
+    if (menu.style.display === '') {
+        icon.style.margin = "";
+        noShow(menu);
+        show(logo);
+        icon.classList.toggle("bx-menu");
+        icon.classList.toggle("bx-x-circle");
+    }
+    else {
+        show(findme);
+        noShow(home);
+    }
 })
 
 const bx_x = document.querySelector(".findme .bx-x");
-bx_x.addEventListener("click", function(){
+bx_x.addEventListener("click", function () {
     noShow(findme);
     show(home);
     icon.style.userSelect = "none";

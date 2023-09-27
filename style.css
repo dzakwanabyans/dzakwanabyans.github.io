@@ -623,6 +623,10 @@ span {
         margin: 0 auto;
     }
 
+    #menu-icon{
+        z-index: 100;
+    }
+
     .menu{
         display: flex;
         position: absolute;
@@ -636,7 +640,7 @@ span {
         height: 25vh;
         justify-content: center;
         align-items: center;
-        z-index: -60;
+        z-index: 2;
     }
 
     .menu a{
@@ -650,7 +654,10 @@ span {
 
 
     .findme{
+        position: fixed;
+        z-index: 1000;
         display: grid;
+        width: 100%;
         grid-template-areas:
         "h1"
         "fb"

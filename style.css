@@ -424,7 +424,6 @@ span {
         /* gap: 1.5rem; */
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 1.5fr .1fr .5fr;
-        display: none;
     }
 
     .heading {
@@ -623,6 +622,34 @@ span {
         display: block;
         margin: 0 auto;
     }
+
+    .menu{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        background: #000;
+        opacity: .5;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: calc(25px + 2rem);
+        height: 30vh;
+        justify-content: center;
+        align-items: center;
+        z-index: -60;
+    }
+
+    .menu a{
+        position: relative;
+        display: flex;
+        align-items: center ;
+        flex: auto;
+        margin: auto;
+
+    }
+
+
+  
 }
 
 

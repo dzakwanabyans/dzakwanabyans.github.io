@@ -7,26 +7,26 @@ const about = document.querySelector(".about");
 const contact = document.querySelector(".contact");
 
 
-function show(pr){
-    pr.style.display='';
+function show(pr) {
+    pr.style.display = '';
 }
 
-function noShow(pr){
-    pr.style.display='none';
+function noShow(pr) {
+    pr.style.display = 'none';
 }
 
 noShow(about);
 noShow(contact);
 
 const menu = document.querySelector(".menu");
-menu.addEventListener("click", function(){
+menu.addEventListener("click", function () {
     const homeClick = menu.querySelector("#home");
     const aboutClick = menu.querySelector("#about");
     const contactClick = menu.querySelector("#contact");
     const portofolioClick = menu.querySelector("#portofolio");
 
 
-    homeClick.addEventListener("click", function(){
+    homeClick.addEventListener("click", function () {
         noShow(about);
         noShow(contact);
         show(home);
@@ -35,7 +35,7 @@ menu.addEventListener("click", function(){
         aboutClick.classList.remove("active");
     })
 
-    aboutClick.addEventListener("click", function(){
+    aboutClick.addEventListener("click", function () {
         show(about);
         noShow(contact);
         noShow(home);
@@ -44,7 +44,7 @@ menu.addEventListener("click", function(){
         aboutClick.classList.remove("active");
     })
 
-    contactClick.addEventListener("click", function(){
+    contactClick.addEventListener("click", function () {
         noShow(about);
         show(contact);
         noShow(home);
@@ -54,7 +54,25 @@ menu.addEventListener("click", function(){
     })
 
 
-    portofolioClick.addEventListener("click", function(){
-        [portofolioClick.innerHTML="Soon"]
+    portofolioClick.addEventListener("click", function () {
+        [portofolioClick.innerHTML = "Soon"]
     })
 })
+
+
+if (window.innerWidth < 576) {
+    noShow(menu);
+}
+
+
+let icon = document.querySelector("#menu-icon");
+    icon.addEventListener("click", function () {
+        if(menu.style.display === 'none'){
+            show(menu);
+        }
+        else{
+            noShow(menu);
+        }
+        icon.classList.toggle("bx-menu");
+        icon.classList.toggle("bx-x-circle");
+    })

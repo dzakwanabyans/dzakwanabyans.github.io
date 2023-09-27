@@ -5,7 +5,7 @@
 const home = document.querySelector(".home");
 const about = document.querySelector(".about");
 const contact = document.querySelector(".contact");
-
+const findme = document.querySelector(".findme");
 
 function show(pr) {
     pr.style.display = '';
@@ -17,6 +17,7 @@ function noShow(pr) {
 
 noShow(about);
 noShow(contact);
+noShow(findme);
 
 const menu = document.querySelector(".menu");
 menu.addEventListener("click", function () {
@@ -41,7 +42,7 @@ menu.addEventListener("click", function () {
         noShow(home);
         aboutClick.classList.add("active");
         homeClick.classList.remove("active");
-        aboutClick.classList.remove("active");
+        contactClick.classList.remove("active");
     })
 
     contactClick.addEventListener("click", function () {
@@ -76,3 +77,17 @@ let icon = document.querySelector("#menu-icon");
         icon.classList.toggle("bx-menu");
         icon.classList.toggle("bx-x-circle");
     })
+
+
+const me = document.querySelector(".me");
+me.addEventListener("click", function(){
+    show(findme);
+    noShow(home);
+})
+
+const bx_x = document.querySelector(".findme .bx-x");
+bx_x.addEventListener("click", function(){
+    noShow(findme);
+    show(home);
+    icon.style.userSelect = "none";
+})

@@ -633,7 +633,7 @@ span {
         left: 0;
         width: 100%;
         padding-top: calc(25px + 2rem);
-        height: 30vh;
+        height: 25vh;
         justify-content: center;
         align-items: center;
         z-index: -60;
@@ -646,17 +646,65 @@ span {
         flex: auto;
         margin: auto;
 
+    }  
+
+
+    .findme{
+        display: grid;
+        grid-template-areas:
+        "h1"
+        "fb"
+        "tw"
+        "ig"
+        "lkd"
+        "gh"
+        "bx-x";
+        background: var(--second-bg-color);
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr .5fr;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .findme a{
+        color: white;
+        font-size: 3rem;
+        margin: auto;
     }
 
+    .findme h1,
+    .findme h1 span{
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+        font-family: 'Russo One', sans-serif;
+        align-self: flex-start;
+        grid-area: h1;
+    }
 
-  
+    .findme .fb{
+        grid-area: fb;
+    }
+
+    .findme .tw{
+        grid-area: tw;
+    }
+
+    .findme .ig{
+        grid-area: ig;
+    }
+
+    .findme .lkd{
+        grid-area: lkd;
+    }
+
+    .findme .gh{
+        grid-area: gh;
+    }
+
+    .findme .bx-x{
+        font-size: 1.5rem;
+        grid-area: bx-x;
+        text-align: center;
+        align-self: flex-end;
+    }
 }
 
-
-.noShow{
-    display: none;
-}   
-
-.display.show{
-    display: '';
-}

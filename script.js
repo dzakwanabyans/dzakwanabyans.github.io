@@ -130,7 +130,7 @@ closeFindMe.addEventListener("click", function(){
 
 
 
-if(window.innerWidth < 992 && window.innerWidth > 575){
+if(window.innerWidth > 575){
     noShow(findme);
     const btnFindMe = home.querySelector(".btn-box");
     me.addEventListener("click", function(){

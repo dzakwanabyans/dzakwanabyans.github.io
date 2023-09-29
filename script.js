@@ -122,7 +122,11 @@ if (window.innerWidth < 576) {
 }
 
 
-
+const closeFindMe = document.querySelector(".findme .bx-x");
+closeFindMe.addEventListener("click", function(){
+    show(home);
+    noShow(findme);
+})
 
 
 
@@ -131,5 +135,6 @@ if(window.innerWidth < 992 && window.innerWidth > 575){
     const btnFindMe = home.querySelector(".btn-box");
     me.addEventListener("click", function(){
         show(findme);
+        noShow(home);
     })
 }

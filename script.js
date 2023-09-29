@@ -63,56 +63,73 @@ menu.addEventListener("click", function () {
 })
 
 
+
+let icon = document.querySelector("#menu-icon");
+const me = document.querySelector(".me"); //findme button
+const bx_x = document.querySelector(".findme .bx-x");
+
+
 if (window.innerWidth < 576) {
     noShow(menu);
+
+
+    icon.addEventListener("click", function () {
+        if (menu.style.display === 'none') {
+            icon.style.margin = "0 0 0 auto";
+            show(menu);
+            noShow(logo);
+        }
+        else {
+            icon.style.margin = "";
+            noShow(menu);
+            show(logo);
+        }
+        icon.classList.toggle("bx-menu");
+        icon.classList.toggle("bx-x-circle");
+    })
+    
+    home.addEventListener("click", function () {
+        if (menu.style.display === '') {
+            icon.style.margin = "";
+            noShow(menu);
+            show(logo);
+            icon.classList.toggle("bx-menu");
+            icon.classList.toggle("bx-x-circle");
+        }
+    })
+    
+    
+    me.addEventListener("click", function () {
+        if (menu.style.display === '') {
+            icon.style.margin = "";
+            noShow(menu);
+            show(logo);
+            icon.classList.toggle("bx-menu");
+            icon.classList.toggle("bx-x-circle");
+        }
+        else {
+            show(findme);
+            noShow(home);
+        }
+    })
+    
+    bx_x.addEventListener("click", function () {
+        noShow(findme);
+        show(home);
+    })
+    
+
 }
 
 
-let icon = document.querySelector("#menu-icon");
-icon.addEventListener("click", function () {
-    if (menu.style.display === 'none') {
-        icon.style.margin = "0 0 0 auto";
-        show(menu);
-        noShow(logo);
-    }
-    else {
-        icon.style.margin = "";
-        noShow(menu);
-        show(logo);
-    }
-    icon.classList.toggle("bx-menu");
-    icon.classList.toggle("bx-x-circle");
-})
-
-home.addEventListener("click", function () {
-    if (menu.style.display === '') {
-        icon.style.margin = "";
-        noShow(menu);
-        show(logo);
-        icon.classList.toggle("bx-menu");
-        icon.classList.toggle("bx-x-circle");
-    }
-})
 
 
-const me = document.querySelector(".me");
-me.addEventListener("click", function () {
-    if (menu.style.display === '') {
-        icon.style.margin = "";
-        noShow(menu);
-        show(logo);
-        icon.classList.toggle("bx-menu");
-        icon.classList.toggle("bx-x-circle");
-    }
-    else {
-        show(findme);
-        noShow(home);
-    }
-})
 
-const bx_x = document.querySelector(".findme .bx-x");
-bx_x.addEventListener("click", function () {
+
+if(window.innerWidth < 992 && window.innerWidth > 575){
     noShow(findme);
-    show(home);
-    icon.style.userSelect = "none";
-})
+    const btnFindMe = home.querySelector(".btn-box");
+    me.addEventListener("click", function(){
+        show(findme);
+    })
+}

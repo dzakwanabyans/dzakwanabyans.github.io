@@ -164,11 +164,13 @@ section {
 
 
 
+
+
+
 /* button style */
 .btn-box {
     position: relative;
     grid-area: btn;
-    margin: 0 0rem;
     width: 10rem;
     height: 3rem;
 }
@@ -215,6 +217,7 @@ section {
 .btn-box .btn:hover {
     color: var(--second-text-color);
 }
+
 
 
 /* span style */
@@ -372,7 +375,7 @@ span {
 /* RESPONSIVE */
 
 /* medium device/tablet */
-@media (max-width : 991px) {
+@media (max-width : 991px){
     .logo {
         display: none;
     }
@@ -413,6 +416,78 @@ span {
 
     .btn-box .btn {
         font-size: 1rem;
+    }
+
+
+    section .findme{
+        min-height: 40vh;
+    }
+
+    .findme{
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-areas: 
+        "h1 h1 h1 h1 h1"
+        "fb tw ig lkd gh"
+        "bx-x bx-x bx-x bx-x bx-x";
+        grid-template-rows: 2fr 1.1fr 2fr;
+        width: 100%;
+        height: 40vh;
+        align-items: flex-end;
+        background: var(--second-bg-color);
+    }
+    
+    .findme a{
+        color: white;
+        font-size: 5rem;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        place-self: center;
+    }
+
+    .findme h1,
+    .findme h1 span{
+        font-family: 'Russo One', sans-serif;
+        letter-spacing: 5px;
+        grid-area: h1;
+        justify-self: center;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        
+    }
+
+    .findme .fb{
+        grid-area: fb;
+    }
+
+    .findme .tw{
+        grid-area: tw;
+    }
+
+    .findme .ig{
+        grid-area: ig;
+    }
+
+    .findme .lkd{
+        grid-area: lkd;
+    }
+
+    .findme .gh{
+        grid-area: gh;
+    }
+
+    .findme .bx-x{
+        grid-area: bx-x;
+        font-size: 1.5rem;
+        background: var(--second-text-color);
+        align-self: flex-end;
+        justify-self: center;
+        border: var(--second-text-color) solid 3px;
+        border-radius: 50%;
     }
 
     .about {
@@ -475,9 +550,6 @@ span {
 
 /* extrasmall device/potrait phone*/
 @media (max-width : 575px) {
-    body {
-        color: var(--text-color);
-    }
 
     .logo {
         display: flex;
@@ -542,17 +614,17 @@ span {
 
     .home-content .text-animation h3 {
         font-size: 7.5vw;
-        font-weight: 600;
+        font-weight: 500;
         text-align: center;
         color: transparent;
-        border: var(--accent-color) 2px solid;
+        border: var(--second-text-color) 2px solid;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
     .home-content .text-animation h3:hover {
-        color: var(--accent-color);
-        -webkit-text-stroke: .7px var(--accent-color);
+        color: var(--second-text-color);
+        -webkit-text-stroke: .7px var(--second-text-color);
 
     }
 
@@ -571,12 +643,13 @@ span {
             "content"
             "btn";
         grid-template-columns: 1fr;
-        grid-template-rows: 0fr 1fr 2fr .3fr;
+        grid-template-rows: .2fr 1fr 2fr .3fr;
+        padding-top: calc((calc(25px + 2rem)) + 2rem);
     }
 
     .heading {
         grid-area: heading;
-        display: none;
+        font-size: 2.3rem;
     }
 
     .about-img {
@@ -652,7 +725,9 @@ span {
 
     }  
 
-
+    section {
+        padding: 1rem 7% 2rem;
+    }
     .findme{
         position: fixed;
         z-index: 1000;
@@ -667,7 +742,7 @@ span {
         "gh"
         "bx-x";
         background: var(--second-bg-color);
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr .5fr;
+        grid-template-rows: .8fr 1fr 1fr 1fr 1fr 1fr .4fr;
         justify-content: center;
         align-items: center;
     }
@@ -680,10 +755,10 @@ span {
 
     .findme h1,
     .findme h1 span{
-        font-size: 2.5rem;
+        font-size: 2rem;
         letter-spacing: 5px;
         font-family: 'Russo One', sans-serif;
-        align-self: flex-start;
+        margin: auto;
         grid-area: h1;
     }
 
@@ -708,10 +783,8 @@ span {
     }
 
     .findme .bx-x{
-        font-size: 1.5rem;
+        font-size: 1rem;
         grid-area: bx-x;
-        text-align: center;
-        align-self: flex-end;
     }
 }
 
